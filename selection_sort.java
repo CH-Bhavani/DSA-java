@@ -1,29 +1,44 @@
-/* to implement selection sort*/
-
 
 public class selectionsort {
+
     public static void main(String[] args) {
-        int[] arr = {20, 35, -15, 7, 55, 1, -22};
-        for (int lastunsortedindex = arr.length-1; lastunsortedindex > 0; lastunsortedindex--) {
-            int largest_ele_index=0;
-            for (int i = 0; i < lastunsortedindex; i++) {
-                if (arr[i] > arr[largest_ele_index])
-                    largest_ele_index=i;
+
+
+        int[] intArray = { 20, 35, -15, 7, 55, 1, -22 };
+
+        for (int lastUnsortedIndex = intArray.length - 1; lastUnsortedIndex > 0;
+             lastUnsortedIndex--) {
+
+            int largest = 0;
+
+            for (int i = 1; i <= lastUnsortedIndex; i++) {
+                if (intArray[i] > intArray[largest]) {
+                    largest = i;
+                }
             }
-            swap(arr, lastunsortedindex, largest_ele_index);
-        }
-        for (int ele: arr) {
-            System.out.println(ele);
+
+            swap(intArray, largest, lastUnsortedIndex);
 
         }
+
+
+        for (int i = 0; i < intArray.length; i++) {
+            System.out.println(intArray[i]);
+        }
+
+
     }
-    public static  void swap(int[] array,int i,int j){
-        if(i==j)
+
+    public static void swap(int[] array, int i, int j) {
+
+        if (i == j) {
             return;
-        int temp;
-        temp=array[i];
-        array[i]=array[j];
-        array[j]=temp;
-    }
+        }
+
+        int temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+
     }
 
+}
