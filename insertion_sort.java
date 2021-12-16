@@ -1,8 +1,6 @@
 /* implement insertionsort */
-
-
-
-public class insertionsort{
+public class insertionsort
+{
 
     public static void main(String[] args) {
 
