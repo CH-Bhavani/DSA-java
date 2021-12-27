@@ -29,12 +29,16 @@ If the element is 2 then swap it with an element in high range.
 
 
 // Java program to sort an array of 0, 1 and 2
+
+
+
+//approach -1
+
+
+
 import java.io.*;
 
 class countzot {
-
-    // Sort the input array, the array is assumed to
-    // have values in {0, 1, 2}
     static void sort012(int a[], int arr_size)
     {
         int lo = 0;
@@ -64,7 +68,7 @@ class countzot {
         }
     }
 
-    /* Utility function to print array arr[] */
+
     static void printArray(int arr[], int arr_size)
     {
         int i;
@@ -73,7 +77,6 @@ class countzot {
         System.out.println("");
     }
 
-    /*Driver function to check for above functions*/
     public static void main(String[] args)
     {
         int arr[] = { 0, 1, 1, 0, 1, 2, 1, 2, 0, 0, 0, 1 };
@@ -81,6 +84,76 @@ class countzot {
         sort012(arr, arr_size);
         System.out.println("Array after seggregation ");
         printArray(arr, arr_size);
+    }
+}
+
+
+
+
+
+
+
+// approach -2
+
+
+
+import java.io.*;
+
+class GFG {
+    static void printArr(int arr[], int n)
+    {
+        for (int i = 0; i < n; i++)
+            System.out.print(arr[i] + " ");
+    }
+    
+    static void sortArr(int arr[], int n)
+    {
+        int i, cnt0 = 0, cnt1 = 0, cnt2 = 0;
+    
+        
+        for (i = 0; i < n; i++) {
+            switch (arr[i]) {
+            case 0:
+                cnt0++;
+                break;
+            case 1:
+                cnt1++;
+                break;
+            case 2:
+                cnt2++;
+                break;
+            }
+        }
+    
+
+        i = 0;
+    
+
+        while (cnt0 > 0) {
+            arr[i++] = 0;
+            cnt0--;
+        }
+    
+
+        while (cnt1 > 0) {
+            arr[i++] = 1;
+            cnt1--;
+        }
+    
+
+        while (cnt2 > 0) {
+            arr[i++] = 2;
+            cnt2--;
+        }
+
+        printArr(arr, n);
+    }
+    
+    public static void main(String[] args)
+    {
+        int arr[] = { 0, 1, 1, 0, 1, 2, 1, 2, 0, 0, 0, 1 };
+        int n = arr.length;
+        sortArr(arr, n);
     }
 }
 
