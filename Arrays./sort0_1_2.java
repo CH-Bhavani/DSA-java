@@ -32,6 +32,7 @@ If the element is 2 then swap it with an element in high range.
 
 
 
+
 //approach -1
 
 
