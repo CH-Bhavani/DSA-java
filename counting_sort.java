@@ -1,4 +1,4 @@
-/* to implement counting sort */
+/* to implement counting sort   */
 
 
 package academy.learnprogramming.countingsort;
