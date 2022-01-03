@@ -57,8 +57,8 @@ class Solution {
         if(n == 1) return 1; // Base Condition, means if trust array length is 0.means No one trust, as only one guy is present in town.
         Set<Integer> set = new HashSet<>(); // those who trusting on someone, they can never be the judge so. Put them into HashSet.
         Map<Integer, Integer> map = new HashMap<>(); // created an frequency map, for those who trust on someone.
-        
-        for(int i = 0; i < trust.length; i++){
+  
+      for(int i = 0; i < trust.length; i++){
             set.add(trust[i][0]); // filling the hashset
             
             int key = trust[i][1]; // created an key variable helps in filling our hashmap
