@@ -15,10 +15,10 @@ Output: false
 Example 2:
 
 Input: trips = [[2,1,5],[3,3,7]], capacity = 5
-Output: true
+Output: true 
 
 
-*/
+  */
 
 
 
