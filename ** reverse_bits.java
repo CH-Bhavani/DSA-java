@@ -26,7 +26,7 @@ Explanation: The input binary string 11111111111111111111111111111101 represents
 
 
 public class Solution {
-    // you need treat n as an unsigned value
+    // y ou need treat n as an unsigned value
     public int reverseBits(int n) {
        return (int)Integer.reverse(n);
     }
