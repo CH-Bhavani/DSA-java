@@ -31,7 +31,7 @@ Output: -1
 
 //method -1
 class Solution {
-    public int findJudge(int n, int[][] trust) {
+    public int findJudge(int n, int[][]  trust) {
         int arr[] = new int[n + 1]; 
         
         for(int i = 0; i < trust.length; i++){
