@@ -22,7 +22,7 @@ rotate 2 steps to the right: [3,99,-1,-100]
 
 
 
-class Solution {
+class Solution  {
     public void rotate(int[] nums, int k) {
         int n = nums.length;
         k = k % n;
