@@ -55,7 +55,6 @@ class Solution {
 
 
 
-bottom-up
 
 class Solution {
     public int minimumTotal(List<List<Integer>> tri) {
@@ -69,3 +68,45 @@ class Solution {
         return tri.get(0).get(0);
     }
 }
+
+
+
+
+class Solution {
+    Integer[][] dp;
+    public int minimumTotal(List<List<Integer>> triangle) {
+        dp=new Integer[triangle.size()][triangle.size()];
+        return helper(triangle,0,0);
+    }
+    private int helper(List<List<Integer>> tri,int r,int c){
+        if(r>=tri.size())
+            return 0;
+        if(dp[r][c]==null)
+            dp[r][c]= Math.min(helper(tri,r+1,c),helper(tri,r+1,c+1))+tri.get(r).get(c);
+        return dp[r][c];
+    }
+}
+
+
+
+
+
+class Solution {
+    public int minimumTotal(List<List<Integer>> triangle) {
+        int n=triangle.size();
+        int[] dp=new int[n];
+        for(int i=0;i<n;i++){
+            dp[i]=triangle.get(n-1).get(i);
+        }
+        for(int i=n-2;i>=0;i--){
+            for(int j=0;j<i+1;j++){
+                dp[j]=Math.min(dp[j],dp[j+1])+triangle.get(i).get(j);
+            }
+        }
+        return dp[0];
+    }
+}
+
+
+
+
