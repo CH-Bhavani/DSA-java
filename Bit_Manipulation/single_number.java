@@ -32,3 +32,10 @@ public int singleNumber(int[] nums) {
 	}
 	return ones;
 }
+
+
+
+
+
+
+
