@@ -62,3 +62,45 @@ So, there are more than one toggle sequences of length 4.
 
 
 
+import java.util.*;
+class test{
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        String s[]=sc.nextLine().split(" ");
+        int n=s.length;
+        int []a=new int[s.length];
+        for(int i=0;i<n;i++) a[i]=Integer.parseInt(s[i]);
+        System.out.print(toggle(a,n));
+        
+    }
+    static int toggle(int[] a,int n){
+        if(n==0) return 0;
+        int[] hi=new int[n];
+        int[] lo=new int[n];
+        hi[0]=1;
+        lo[0]=1;
+        for(int i=1;i<n;i++){
+            if(a[i]>a[i-1]){
+                hi[i]=lo[i-1]+1;
+                lo[i]=lo[i-1];
+                
+            }
+            else if(a[i]<a[i-1]){
+                lo[i]=hi[i-1]+1;
+                hi[i]=hi[i-1];
+                
+            }
+            else{
+                lo[i]=lo[i-1];
+                hi[i]=hi[i-1];
+                
+            }
+            
+        }
+        return Math.max(lo[n-1],hi[n-1]);
+        
+    }
+    
+}
+
+
