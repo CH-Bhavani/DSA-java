@@ -45,3 +45,27 @@ class Solution {
         return dfs(s1,s2+1,m,n)+dfs(s1+1,s2,m,n);
     }
 }
+
+
+
+//dp
+
+
+class Solution {
+    public int uniquePaths(int m, int n) {
+        if(m==1 || n==1) return 1;
+        int grid[][]=new int[m+1][n+1];
+        return dfs(grid,0,0,m,n);
+    }
+    public int dfs(int[][] grid,int s1,int s2,int m,int n){
+        if(s1>=m ||s2>=n)
+            return 0;
+        if(s1==m-1 && s2==n-1)
+            return 1;
+        if(grid[s1][s2]!=0)
+            return grid[s1][s2];
+        grid[s1][s2]=dfs(grid,s1,s2+1,m,n)+dfs(grid,s1+1,s2,m,n);
+        return grid[s1][s2];
+    }
+}
+
