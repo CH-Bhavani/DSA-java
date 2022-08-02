@@ -47,6 +47,5 @@ class Solution {
             i++;
     }
     return pq.peek();
-}
-        
+ }      
 }
