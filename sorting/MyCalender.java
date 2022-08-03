@@ -51,10 +51,12 @@ class MyCalendar {
  * MyCalendar obj = new MyCalendar();
  * boolean param_1 = obj.book(start,end);
  */
+
+above-------------------o(n^2)
  
  
  
- 
+ sol2-o(nlogn)
  
  class MyCalendar {
     TreeMap<Integer, Integer> calendar;
