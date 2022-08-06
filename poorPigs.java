@@ -48,7 +48,7 @@ class Solution {
 
 
 
-sol-2
+sol-2-math
 
 
 class Solution {
