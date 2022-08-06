@@ -30,7 +30,7 @@ Output: 2
 
 */
 
-sol-1
+sol-1-math
 
 class Solution {
     public int poorPigs(int buckets, int minutesToDie, int minutesToTest) {
