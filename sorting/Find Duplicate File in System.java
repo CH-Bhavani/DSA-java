@@ -56,6 +56,7 @@ class Solution {
             if(hm.get(key).size()>1)
                 res.add(hm.get(key));
         }
+     
         return res;
         
     }
