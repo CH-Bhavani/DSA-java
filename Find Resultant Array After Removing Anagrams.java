@@ -50,3 +50,25 @@ class Solution {
         return l;
     }
 }
+
+
+class Solution {
+    public List<String> removeAnagrams(String[] words) {
+        Stack<String> stk=new Stack<>();
+        for(int i=words.length-1;i>=0;i--){
+            while(!stk.isEmpty() && anagram(stk.peek(),words[i])) stk.pop();
+            stk.push(words[i]);    
+        }
+        List<String> l=new ArrayList<>();
+        while(!stk.isEmpty())
+            l.add(stk.pop());
+        return l;
+    }
+    public boolean anagram(String peek,String w){
+        int[] arr=new int[26];
+        for(char i :peek.toCharArray()) arr[i-'a']++;
+        for(char i :w.toCharArray()) arr[i-'a']--;
+        for(int i:arr) if(i!=0) return false;
+        return true;
+    }
+}
